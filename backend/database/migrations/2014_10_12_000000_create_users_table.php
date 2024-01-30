@@ -21,6 +21,10 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->integer('telefono');
+            $table->integer('cedula');
+            $table->unsignedBigInteger('idRol');
+            $table->unsignedBigInteger('idCiudad');
         });
     }
 
