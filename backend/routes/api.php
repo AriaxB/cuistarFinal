@@ -4,6 +4,8 @@ use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\stock_inventarioController;
 use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\OrdenVentasController;
+use App\Http\Controllers\MascotasController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +34,12 @@ Route::controller(stock_inventarioController::class)->group(function(){
 
 });
 Route::controller(ProductosController::class)->group(function(){
+
+});
+Route::controller(OrdenVentasController::class)->group(function(){
+
+});
+Route::controller(MascotasController::class)->group(function(){
 
 });
 
