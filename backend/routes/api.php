@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ProveedoresController;
+use App\Http\Controllers\stock_inventarioController;
 use App\Http\Controllers\UsuariosController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,9 +23,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(UsuariosController::class)->group(function(){
-    
+
 });
 Route::controller(ProveedoresController::class)->group(function(){
-    
+
+});
+Route::controller(stock_inventarioController::class)->group(function(){
+
+});
+Route::controller(ProductosController::class)->group(function(){
+
 });
 
