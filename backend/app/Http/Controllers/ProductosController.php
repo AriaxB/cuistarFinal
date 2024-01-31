@@ -43,7 +43,7 @@ public function update(Request $req,$id){
     $produc->id_tallas=$req->input('id_tallas');
     $produc->imagen=$req->input('imagen');
     $produc->save();
-    return true;
+    return $produc;
 }
 public function delete($id){
     $produc=productos::destroy($id);

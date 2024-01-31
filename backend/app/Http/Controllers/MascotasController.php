@@ -8,79 +8,50 @@ use Illuminate\Http\Request;
 
 class MascotasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    
+            public function get(){
+                $mascot = Mascotas::all();
+                return $mascot;
+            }
+
+            public function getOne($id){
+                $mascot = Mascotas::find($id);
+                return $mascot;
+            }
+
+            public function add(Request $request){
+                $mascot = new Mascotas();
+
+                $mascot->id_usuario = $request->input('id_usuario');
+                $mascot->id_genero = $request->input('id_genero');
+                $mascot->nombre_mascota = $request->input('nombre_mascota');
+                $mascot->edad_mascota = $request->input('edad_mascota');
+                $mascot->id_peso = $request->input('id_peso');
+                $mascot->raza = $request->input('raza');
+                $mascot->id_categoria = $request->input('id_categoria');
+                $mascot->id_estatura = $request->input('id_estatura');
+
+                $mascot->save();
+                return true;
+            }
+            public function update(Request $request, $id){
+                $mascot = Mascotas::findOrFail($id);
+
+                $mascot->id_usuario = $request->input('id_usuario');
+                $mascot->id_genero = $request->input('id_genero');
+                $mascot->nombre_mascota = $request->input('nombre_mascota');
+                $mascot->edad_mascota = $request->input('edad_mascota');
+                $mascot->id_peso = $request->input('id_peso');
+                $mascot->raza = $request->input('raza');
+                $mascot->id_categoria = $request->input('id_categoria');
+                $mascot->id_estatura = $request->input('id_estatura');
+
+                $mascot->save();
+                return true;
+            }
+            public function delete($id){
+                $mascot = Mascotas::destroy($id);
+                return true;
+            }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Mascotas  $mascotas
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Mascotas $mascotas)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Mascotas  $mascotas
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Mascotas $mascotas)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Mascotas  $mascotas
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Mascotas $mascotas)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Mascotas  $mascotas
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Mascotas $mascotas)
-    {
-        //
-    }
-}

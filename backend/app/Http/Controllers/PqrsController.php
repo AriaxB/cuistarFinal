@@ -8,79 +8,50 @@ use Illuminate\Http\Request;
 
 class PqrsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+        public function get(){
+            $pq = Pqrs::all();
+            return $pq;
+        }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        public function getOne($id){
+            $pq = Pqrs::find($id);
+            return $pq;
+        }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Pqrs  $pqrs
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Pqrs $pqrs)
-    {
-        //
-    }
+        public function add(Request $request){
+            $pq = new Pqrs();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Pqrs  $pqrs
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Pqrs $pqrs)
-    {
-        //
-    }
+            $pq->id_usuario = $request->input('id_usuario');
+            $pq->id_tipo = $request->input('id_tipo');
+            $pq->asunto = $request->input('asunto');
+            $pq->fecha = $request->input('fecha');
+            $pq->evidencia = $request->input('evidencia');
+            $pq->respuesta = $request->input('respuesta');
+            $pq->id_estado = $request->input('id_estado');
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pqrs  $pqrs
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Pqrs $pqrs)
-    {
-        //
-    }
+            $pq->save();
+            return true;
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Pqrs  $pqrs
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Pqrs $pqrs)
-    {
-        //
-    }
-}
+        public function update(Request $request, $id){
+            $pq = Pqrs::findOrFail($id);
+
+            $pq->id_usuario = $request->input('id_usuario');
+            $pq->id_tipo = $request->input('id_tipo');
+            $pq->asunto = $request->input('asunto');
+            $pq->fecha = $request->input('fecha');
+            $pq->evidencia = $request->input('evidencia');
+            $pq->respuesta = $request->input('respuesta');
+            $pq->id_estado = $request->input('id_estado');
+
+            $pq->save();
+            return true;
+        }
+
+        public function delete($id){
+            $pq = Pqrs::destroy($id);
+            return true;
+        }
+     }
+

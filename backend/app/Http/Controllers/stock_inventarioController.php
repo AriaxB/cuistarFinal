@@ -21,7 +21,7 @@ class stock_inventarioController extends Controller
     $inventari->id_inventario=$req->input('nombre');
     $inventari->id_producto=$req->input('id_producto');
     $inventari->fecha=$req->input('fecha');
-    $inventari->cantidad_actual=$req->input('antidad_actual');
+    $inventari->cantidad_actual=$req->input('cantidad_actual');
     $inventari->entradas=$req->input('entradas');
     $inventari->id_salidas=$req->input('id_salidas');
     $inventari->precio_total=$req->input('precio_total');
@@ -34,7 +34,7 @@ class stock_inventarioController extends Controller
     $inventari->id_inventario=$req->input('nombre');
     $inventari->id_producto=$req->input('id_producto');
     $inventari->fecha=$req->input('fecha');
-    $inventari->cantidad_actual=$req->input('antidad_actual');
+    $inventari->cantidad_actual=$req->input('cantidad_actual');
     $inventari->entradas=$req->input('entradas');
     $inventari->id_salidas=$req->input('id_salidas');
     $inventari->precio_total=$req->input('precio_total');

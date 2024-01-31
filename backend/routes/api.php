@@ -30,6 +30,11 @@ Route::controller(UsuariosController::class)->group(function(){
 
 });
 Route::controller(ProveedoresController::class)->group(function(){
+    Route::get('/prove','get');
+    Route::get('/prove/{id}','getOne');
+    Route::post('/prove','add');
+    Route::put('/prove/{id}','update');
+    Route::delete('/prove/{id}','delete');
 
 });
 Route::controller(stock_inventarioController::class)->group(function(){
@@ -53,10 +58,23 @@ Route::controller(OrdenVentasController::class)->group(function(){
 
 });
 Route::controller(MascotasController::class)->group(function(){
+    Route::get('/mascot', 'get');
+    Route::get('/mascot/{id}', 'getOne');
+    Route::post('/mascot', 'add');
+    Route::put('/mascot/{id}', 'update');
+    Route::delete('/mascot/{id}', 'delete');
 
 });
 
 Route::controller(PqrsController::class)->group(function(){
+
+
+        Route::get('/pq', 'get');
+        Route::get('/pq/{id}', 'getOne');
+        Route::post('/pq', 'add');
+        Route::put('/pq/{id}', 'update');
+        Route::delete('/pq/{id}', 'delete');
+
 
 });
 
