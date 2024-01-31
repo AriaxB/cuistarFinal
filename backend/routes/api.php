@@ -6,6 +6,8 @@ use App\Http\Controllers\stock_inventarioController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\OrdenVentasController;
 use App\Http\Controllers\MascotasController;
+use App\Http\Controllers\PqrsController;
+use App\Http\Controllers\SalidasController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +42,14 @@ Route::controller(OrdenVentasController::class)->group(function(){
 
 });
 Route::controller(MascotasController::class)->group(function(){
+
+});
+
+Route::controller(PqrsController::class)->group(function(){
+
+});
+
+Route::controller(SalidasController::class)->group(function(){
 
 });
 
