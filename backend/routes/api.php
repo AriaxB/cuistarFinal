@@ -33,9 +33,20 @@ Route::controller(ProveedoresController::class)->group(function(){
 
 });
 Route::controller(stock_inventarioController::class)->group(function(){
+    Route::get('/inven','get');
+    Route::get('/inven/{id}','getOne');
+    Route::post('/inven','add');
+    Route::put('/inven/{id}','update');
+    Route::delete('/inven/{id}','delete');
+
 
 });
 Route::controller(ProductosController::class)->group(function(){
+    Route::get('/produc','get');
+    Route::get('/produc/{id}','getOne');
+    Route::post('/produc','add');
+    Route::put('/produc/{id}','update');
+    Route::delete('/produc/{id}','delete');
 
 });
 Route::controller(OrdenVentasController::class)->group(function(){
