@@ -21,7 +21,6 @@ class PqrsController extends Controller
 
         public function add(Request $request){
             $pq = new Pqrs();
-
             $pq->id_usuario = $request->input('id_usuario');
             $pq->id_tipo = $request->input('id_tipo');
             $pq->asunto = $request->input('asunto');

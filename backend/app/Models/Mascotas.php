@@ -11,7 +11,7 @@ class Mascotas extends Model
 
     protected $table='mascotas';
 
-    protected $primaryKey = 'id_mascota	';
+    protected $primaryKey = 'id_mascota';
 
     public $timestamps = false;
 }

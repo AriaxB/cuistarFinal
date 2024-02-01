@@ -18,7 +18,7 @@ class stock_inventarioController extends Controller
     }
     public function add(Request $req){
     $inventari=new stock_inventario();
-    $inventari->id_inventario=$req->input('nombre');
+
     $inventari->id_producto=$req->input('id_producto');
     $inventari->fecha=$req->input('fecha');
     $inventari->cantidad_actual=$req->input('cantidad_actual');
@@ -29,9 +29,7 @@ class stock_inventarioController extends Controller
     return true;
     }
     public function update(Request $req,$id){
-        $inventari=stock_inventario::findOrFail($id);
-        $inventari=new stock_inventario();
-    $inventari->id_inventario=$req->input('nombre');
+    $inventari=stock_inventario::findOrFail($id);
     $inventari->id_producto=$req->input('id_producto');
     $inventari->fecha=$req->input('fecha');
     $inventari->cantidad_actual=$req->input('cantidad_actual');

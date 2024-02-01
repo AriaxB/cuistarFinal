@@ -66,11 +66,11 @@ Route::controller(OrdenVentasController::class)->group(function(){
     Route::delete('/orden_ventas/{id}','deleteOrdenVenta');
 });
 Route::controller(MascotasController::class)->group(function(){
-    Route::get('/mascot', 'get');
-    Route::get('/mascot/{id}', 'getOne');
+    Route::get('/mascot','get');
+    Route::get('/mascot/{id}','getOne');
     Route::post('/mascot', 'add');
-    Route::put('/mascot/{id}', 'update');
-    Route::delete('/mascot/{id}', 'delete');
+    Route::put('/mascot/{id}','update');
+    Route::delete('/mascot/{id}','delete');
 
 });
 

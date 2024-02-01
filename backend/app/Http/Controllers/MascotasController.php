@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class MascotasController extends Controller
 {
-    
+
             public function get(){
                 $mascot = Mascotas::all();
                 return $mascot;
