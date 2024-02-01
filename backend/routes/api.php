@@ -27,7 +27,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(UsuariosController::class)->group(function(){
-
+    Route::get('/user','get');
+    Route::get('/user/{id}','getOne');
+    Route::post('/user','add');
+    Route::put('/user/{id}','update');
+    Route::delete('/user/{id}','delete');
 });
 Route::controller(ProveedoresController::class)->group(function(){
     Route::get('/prove','get');
@@ -55,7 +59,11 @@ Route::controller(ProductosController::class)->group(function(){
 
 });
 Route::controller(OrdenVentasController::class)->group(function(){
-
+    Route::get('/orden_ventas','getOrdenVentas');
+    Route::get('/orden_ventas/{id}','getOrdenVentaOne');
+    Route::post('/orden_ventas','addOrdenVenta');
+    Route::put('/orden_ventas/{id}','updateOrdenVenta');
+    Route::delete('/orden_ventas/{id}','deleteOrdenVenta');
 });
 Route::controller(MascotasController::class)->group(function(){
     Route::get('/mascot', 'get');
